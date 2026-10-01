@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #fff7f0;
+  --color-blush: #f9dde2;
+  --color-blush-deep: #f3c4cd;
+  --color-rose: #d9677b;
+  --color-rose-dark: #b84a60;
+  --color-burgundy: #6e1f2e;
+  --color-burgundy-deep: #4f1420;
+  --color-gold: #c9a45c;
+  --color-gold-soft: #e8d3a6;
+  --color-ink: #4a2a30;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-hand: "Caveat", cursive;
+  --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-cream font-sans text-ink antialiased;
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: var(--color-blush-deep);
+    color: var(--color-burgundy);
+  }
+}
+
+@utility glow-rose {
+  filter: drop-shadow(0 0 18px rgb(217 103 123 / 0.55))
+    drop-shadow(0 0 40px rgb(217 103 123 / 0.3));
+}
+
+@utility grain {
+  background-image: radial-gradient(rgb(110 31 46 / 0.05) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+/* Background floating hearts: pure CSS so they stay cheap */
+@keyframes float-up {
+  0% { transform: translate3d(0, 0, 0) rotate(var(--r, 0deg)); opacity: 0; }
+  12% { opacity: var(--o, 0.5); }
+  50% { transform: translate3d(var(--dx, 12px), -50vh, 0) rotate(calc(var(--r, 0deg) * -1)); }
+  88% { opacity: var(--o, 0.5); }
+  100% { transform: translate3d(0, -105vh, 0) rotate(var(--r, 0deg)); opacity: 0; }
+}
+.float-heart {
+  animation: float-up var(--d, 16s) linear var(--delay, 0s) infinite;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .float-heart { animation: none; opacity: 0; }
+}
