@@ -5,6 +5,7 @@ import LittleThings from './components/LittleThings'
 import ApologyPackage from './components/ApologyPackage'
 import TapHeart from './components/TapHeart'
 import Finale from './components/Finale'
+import DateAsk from './components/DateAsk'
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <TapHeart />
       </main>
       <Finale />
+      <DateAsk />
     </MotionConfig>
   )
 }

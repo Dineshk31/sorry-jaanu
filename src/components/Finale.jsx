@@ -84,14 +84,26 @@ export default function Finale() {
                 <p className="font-display text-xl italic sm:text-2xl">Sorry, Jaanu.</p>
                 <p className="mt-2 text-lg text-cream/90">Come back and be cute with me again. ❤️</p>
               </motion.div>
+
+              <motion.button
+                type="button"
+                onClick={() =>
+                  document.getElementById('date')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                }
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, y: [0, 6, 0] }}
+                transition={{
+                  opacity: { delay: 2.8, duration: 0.8 },
+                  y: { delay: 2.8, duration: 1.8, repeat: Infinity, ease: 'easeInOut' },
+                }}
+                className="mt-12 cursor-pointer font-hand text-2xl text-gold-soft outline-none focus-visible:underline"
+              >
+                wait… one more question 👇
+              </motion.button>
             </motion.div>
           )}
         </AnimatePresence>
       </motion.div>
-
-      <p className="relative pb-6 text-center font-hand text-lg text-cream/50">
-        made with love (and a little guilt)
-      </p>
     </section>
   )
 }
