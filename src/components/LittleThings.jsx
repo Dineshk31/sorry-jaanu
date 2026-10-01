@@ -5,7 +5,7 @@ import { fadeUp, stagger } from './motion'
 const things = [
   { emoji: '🥹', title: 'Your smile', note: 'my favourite thing, honestly' },
   { emoji: '🎶', title: 'Your voice', note: 'even when you’re scolding me' },
-  { emoji: '💬', title: 'Your random talks', note: 'the 2am ones especially' },
+  { emoji: '💬', title: 'Your random talks', note: 'the night ones especially' },
   { emoji: '🌸', title: 'Your cute little habits', note: 'yes, I notice all of them' },
   { emoji: '😂', title: 'Making me laugh', note: 'even on my worst days' },
   { emoji: '🫶', title: 'Just having you around', note: 'that’s it. that’s the list.' },
